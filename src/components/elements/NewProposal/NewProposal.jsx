@@ -21,12 +21,13 @@ import { addProposal } from '../../../contexts/s2tContext/s2tActions';
 export function NewProposal({ onclick }) {
   const s2tContext = useContext(S2tContext);
   const { s2tState, s2tDispatch } = s2tContext;
+  const currentDate = new Date().toISOString().substring(0, 10); // Get current date in YYYY-MM-DD format
 
   const [proposalData, setProposalData] = useState({
     opportunityId: 0,
     details: {
       from: 'Reducer',
-      date: '',
+      date: currentDate,
       disponibility: '',
       category: '',
       opportunity: '',
@@ -81,8 +82,6 @@ export function NewProposal({ onclick }) {
     { value: '€', text: 'Euro' },
   ];
 
-  console.log(proposalData);
-
   return (
     <Styled.NewProposalContainer>
       <Row>
@@ -117,7 +116,7 @@ export function NewProposal({ onclick }) {
               title="País"
               required
               value={proposalData.details.country}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, country: e.target.value } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, country: e.target.value } }))}
             />
 
             <AuthDropdown
@@ -126,7 +125,7 @@ export function NewProposal({ onclick }) {
               id="position"
               required
               options={positionsOptions}
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, opportunity: option.text } }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, opportunity: option } }))}
             />
 
             <AuthDropdown
@@ -134,7 +133,7 @@ export function NewProposal({ onclick }) {
               id="competitiveCategory"
               placeholder="Escolha a categoria"
               options={competitiveCategoryOptions}
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, category: option.text } }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, category: option } }))}
               required
             />
 
@@ -204,7 +203,7 @@ export function NewProposal({ onclick }) {
               id="paymentCurrency"
               options={currencyOptions}
               required
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, currency: option.value } } }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, currency: option } } }))}
             />
 
           </AuthLayout>

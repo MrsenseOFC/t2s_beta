@@ -11,6 +11,7 @@ import { VerticalSoloSlide } from '../../../../components/elements/VerticalSoloS
 import { StyledLink } from '../../../../components/elements/StyledLink/StyledLink';
 import { ListContainer, ListItem, ListWrapper } from '../../../../components/elements/List/List-Styles';
 import { s2tData } from '../../../../contexts/s2tContext/s2tData';
+import { Banner } from '../../../../components/elements/Banner/Banner';
 
 export function Events() {
   window.scrollTo({
@@ -21,7 +22,8 @@ export function Events() {
   return (
     <Styled.EventsContainer>
 
-      <Styled.TextContainer>
+      <Banner backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png">
+
         <Title text="Boas-vindas aos eventos da T2S!" uppercase />
 
         <Text text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" />
@@ -49,7 +51,7 @@ export function Events() {
             </ListItem>
           </ListContainer>
         </ListWrapper>
-      </Styled.TextContainer>
+      </Banner>
 
       <BannerSlide autoplay slidesperview={3}>
 

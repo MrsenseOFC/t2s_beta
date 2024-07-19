@@ -14,6 +14,7 @@ import { Button } from '../../../../components/elements/Button/Button';
 import { theme } from '../../../../styles/theme';
 import { ListContainer, ListItem, ListWrapper } from '../../../../components/elements/List/List-Styles';
 import { s2tData } from '../../../../contexts/s2tContext/s2tData';
+import { Banner } from '../../../../components/elements/Banner/Banner';
 
 export function BenefitsClub() {
   window.scrollTo({
@@ -24,7 +25,7 @@ export function BenefitsClub() {
   return (
     <Styled.BenefitsClubContainer>
 
-      <Styled.TextContainer>
+      <Banner backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png">
         <Title text="Boas-vindas ao Clube de Benefícios da T2S!" uppercase />
 
         <Text text="Aqui, você encontra tudo para tornar sua vida mais incrível: descontos, ofertas, experiências e muito mais!" />
@@ -53,7 +54,7 @@ export function BenefitsClub() {
             </ListItem>
           </ListContainer>
         </ListWrapper>
-      </Styled.TextContainer>
+      </Banner>
 
       {/* <Slide items={s2tState.photos.benefits} title="Benefícios" /> */}
 

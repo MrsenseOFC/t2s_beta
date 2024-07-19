@@ -5,6 +5,7 @@ import { IconContainer } from '../../components/elements/IconDiv/IconDiv-Styles'
 import { MobileNavContainer } from '../../components/MobileNav/MobileNav-Styles';
 import { FloatingHeaderContainer } from '../../components/Headers/FloatingHeader/FloatingHeader-Styles';
 import { FloatingMenuContainer } from '../../components/FloatingMenu/FloatingMenu-Styles';
+import { IconCardContainer } from '../../components/elements/IconCard/IconCard-Styles';
 
 export const UsersPage = styled.section`
   ${({ theme }) => css`
@@ -28,6 +29,14 @@ export const UsersPage = styled.section`
         }
     }
   }
+
+  & ${IconCardContainer} {
+      transition: all 200ms ease-in-out ;
+
+      > svg {
+        transition: all 200ms ease-in-out ;
+      }
+    }
 
   > ${FloatingMenuContainer} {
       display: none;

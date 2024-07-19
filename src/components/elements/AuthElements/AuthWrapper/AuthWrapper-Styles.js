@@ -40,7 +40,6 @@ export const AuthContainer = styled.div`
   backdrop-filter: blur(10px);
   border: ${theme.borders.xwhite};
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;

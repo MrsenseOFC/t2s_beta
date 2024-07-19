@@ -63,6 +63,8 @@ export function EditProposal({ onclick, proposal }) {
     editProposal(s2tDispatch, proposalData);
   };
 
+  console.log(proposalData);
+
   return (
     <Styled.EditProposalContainer>
       <Row>
@@ -84,7 +86,7 @@ export function EditProposal({ onclick, proposal }) {
               placeholder="Para qual liga é a oportunidade?"
               title="Liga"
               value={proposalData.details.org}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, org: e.target.value } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, org: e.target.value } }))}
               required
             />
 
@@ -96,7 +98,7 @@ export function EditProposal({ onclick, proposal }) {
               title="País"
               required
               value={proposalData.details.country}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, country: e.target.value } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, country: e.target.value } }))}
             />
 
             <AuthDropdown
@@ -105,7 +107,7 @@ export function EditProposal({ onclick, proposal }) {
               required
               selectedvalue={proposalData.details.opportunity}
               options={positionsOptions}
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, opportunity: option.text } }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, opportunity: option } }))}
             />
 
             <AuthDropdown
@@ -113,7 +115,7 @@ export function EditProposal({ onclick, proposal }) {
               id="competitiveCategory"
               selectedvalue={proposalData.details.category}
               options={competitiveCategoryOptions}
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, category: option.text } }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, category: option } }))}
               required
             />
 
@@ -123,7 +125,7 @@ export function EditProposal({ onclick, proposal }) {
               id="disponibility_input"
               title="Qual a data de disponibilidade da oportunidade?"
               value={proposalData.details.disponibility}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, disponibility: e.target.value } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, disponibility: e.target.value } }))}
             />
 
             <AuthInput
@@ -133,7 +135,7 @@ export function EditProposal({ onclick, proposal }) {
               placeholder="Qual altura mínima para se candidatar?"
               title="Altura mínima"
               value={proposalData.details.minHeight}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, minHeight: e.target.value } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, minHeight: e.target.value } }))}
             />
 
             <AuthInput
@@ -143,7 +145,7 @@ export function EditProposal({ onclick, proposal }) {
               placeholder="Qual a idade mínima para se candidatar? (Em anos)"
               title="Idade Mínima"
               value={proposalData.details.age.minAge}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, age: { ...prevData.details.age, minAge: e.target.value } } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, age: { ...prevData.details.age, minAge: e.target.value } } }))}
             />
 
             <AuthInput
@@ -153,7 +155,7 @@ export function EditProposal({ onclick, proposal }) {
               placeholder="Qual a idade máxima para se candidatar? (Em anos)"
               title="Idade Máxima"
               value={proposalData.details.age.maxAge}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, age: { ...prevData.details.age, maxAge: e.target.value } } }))}
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, age: { ...prevData.details.age, maxAge: e.target.value } } }))}
             />
 
             <AuthInput
@@ -164,7 +166,7 @@ export function EditProposal({ onclick, proposal }) {
               title="Salário mínimo"
               required
               value={proposalData.details.payment.minPayment}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, minPayment: e.target.value } } }))} // Atualize aqui
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, minPayment: e.target.value } } }))} // Atualize aqui
             />
 
             <AuthInput
@@ -174,7 +176,7 @@ export function EditProposal({ onclick, proposal }) {
               placeholder="Qual o maior valor que o jogador pode receber mensalmente?"
               title="Salário máximo"
               value={proposalData.details.payment.maxPayment}
-              onchange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, maxPayment: e.target.value } } }))} // Atualize aqui
+              onChange={(e) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, maxPayment: e.target.value } } }))} // Atualize aqui
             />
 
             <AuthDropdown
@@ -183,7 +185,7 @@ export function EditProposal({ onclick, proposal }) {
               id="paymentCurrency"
               options={currencyOptions}
               required
-              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, currency: option.value } } }))}
+              onDropdownChange={(option) => setProposalData((prevData) => ({ ...prevData, details: { ...prevData.details, payment: { ...prevData.details.payment, currency: option } } }))}
             />
 
           </AuthLayout>

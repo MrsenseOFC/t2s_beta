@@ -10,7 +10,7 @@ import { BannerContainer } from '../../../../components/elements/Banner/Banner-S
 import { RowContainer } from '../../../../components/RowContainer/Row-Styles.js';
 import { IconCardContainer } from '../../../../components/elements/IconCard/IconCard-Styles.js';
 import {
-  fadeIn, slideIn, slideInRight, slideOut,
+  fadeIn, shake, slideIn, slideInRight, slideOut,
 } from '../../../../styles/animations.js';
 
 export const PlayerPageContainer = styled.article`
@@ -53,7 +53,7 @@ export const PlayerPageContainer = styled.article`
     
       ${IconCardContainer} {
         position: relative;
-        animation: ${slideInRight} 500ms;
+        animation: none;
 
         & svg {
           @media (max-width: 1080px) {
@@ -164,10 +164,11 @@ export const Benefits = styled.div`
 export const Explanation = styled.div`
   ${({ theme }) => css`
     animation: ${fadeIn} 500ms;
-    background:  rgba(0,0,0,0.7);
+    background:  rgba(0,0,0,1);
     border-radius: 12px;
     border: ${theme.borders.primary};
-    box-shadow: 0px 0px 5px 1px ${theme.colors.primary};
+    box-shadow: 0px 0px 10px 2px ${theme.colors.primary};
+
     width: 100%;
     padding: ${theme.spacings.small};
     position: absolute;

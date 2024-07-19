@@ -12,7 +12,7 @@ export const SocialLinkElement = styled.div`
       box-shadow: 0px 0px 10px 3px ${theme.colors.gray};
     }
      & svg {
-      width: 50px;
+      width: 45px;
 
       @media ${theme.medias.tablet} {
         width: 40px;

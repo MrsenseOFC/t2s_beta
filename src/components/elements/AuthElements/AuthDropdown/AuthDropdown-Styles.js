@@ -21,6 +21,12 @@ export const DropdownContent = styled.div`
     z-index: 2000;
     width: 100%;
     font-family: ${theme.fonts.primary};
+
+    transition: all 500ms ease-in-out;
+
+    &:hover {
+      border: ${theme.borders.primary};
+    }
   `}
 `;
 
@@ -34,11 +40,11 @@ export const DropdownItem = styled.p`
   text-align: left;
   user-select: none;
   transition: all 400ms ease-in-out;
-
+  
 
   &:hover {
     color: ${theme.colors.black};
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.primary};
   }
 
   @media ${theme.medias.mobile} {
@@ -66,14 +72,14 @@ export const DropdownTitle = styled.p`
 `;
 
 export const DropdownButton = styled.button`
-  ${({ theme }) => css`
+  ${({ theme, active }) => css`
   background-color: ${theme.colors.transparent};
-  color: ${theme.colors.white};
-  border: ${theme.borders.white};
+  color: ${active ? theme.colors.primary : theme.colors.white};
+  border: ${active ? theme.borders.primary : theme.borders.white};
   border-radius: 10px;
   user-select: none;
   width: 100%;
-  padding: 10px;
+  padding: ${theme.spacings.small};
   cursor: pointer;
   font-family: ${theme.fonts.primary};
   
@@ -83,6 +89,8 @@ export const DropdownButton = styled.button`
   align-items: center;
 
   transition: all 500ms ease-in-out;
+  box-shadow: ${active ? `0px 0px 5px 1px ${theme.colors.primary}` : `0px 0px 5px 1px ${theme.colors.transparent}`};
+
 
   &:hover {
     color: ${theme.colors.primary};

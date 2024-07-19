@@ -15,6 +15,11 @@ import { AuthRedirect } from '../../components/elements/AuthElements/AuthRedirec
 import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { Bubble } from '../../components/Bubble/Bubble';
 import { theme } from '../../styles/theme';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
+import { Logo } from '../../components/elements/Logo/Logo';
+import { Nav } from '../../components/Nav/Nav';
+import { Button } from '../../components/elements/Button/Button';
+import { ListContainer, ListItem } from '../../components/elements/List/List-Styles';
 
 export function Register() {
   const [username, setUsername] = useState('');
@@ -99,124 +104,195 @@ export function Register() {
   ];
 
   return (
-    <Styled.RegisterPage>
-      <Bubble>
-        <Subtitle text="Passo a passo" uppercase as="h4" size={theme.sizes.xlarge} />
-        <Text text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur" />
-      </Bubble>
+    <>
 
-      <AuthContainer>
-        <Subtitle text="Registre-se" uppercase as="h4" size={theme.sizes.xlarge} />
+      <FloatingHeader>
 
-        <AuthForm onSubmit={handleSubmit}>
-          <AuthInput
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Seu nome de usuário"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+        <Logo size="150px" logo="/assets/images/pngs/logo.png" />
 
-          <AuthInput
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Seu e-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+        <Nav>
 
-          <AuthInput
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Sua senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-
-          <AuthInput
-            type="password"
-            name="confirmPassword"
-            id="confirmPassword"
-            placeholder="Confirme sua senha"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-
-          <AuthDropdown
-            title="Qual o seu tipo de perfil?"
-            id="profileType"
-            placeholder="Escolha seu tipo de perfil"
-            options={profileTypeOptions}
-            selectedvalue={profileType}
-            onDropdownChange={(value) => setProfileType(value)}
-            required
-          />
-
-          <AuthDropdown
-            title="Qual categoria você se enquadra?"
-            id="competitiveCategory"
-            placeholder="Escolha sua categoria"
-            options={competitiveCategoryOptions}
-            selectedvalue={competitiveCategory}
-            onDropdownChange={(value) => setCompetitiveCategory(value)}
-            required
-          />
-
-          <AuthDropdown
-            title="Qual o seu nível competitivo?"
-            id="competitiveLevel"
-            placeholder="Escolha seu nível"
-            options={levelsOptions}
-            selectedvalue={competitiveLevel}
-            onDropdownChange={(value) => setCompetitiveLevel(value)}
-          />
-
-          <AuthDropdown
-            title="Deseja atuar em um time de qual categoria?"
-            id="teamCategory"
-            placeholder="Escolha a categoria do time"
-            options={teamCategoryOptions}
-            selectedvalue={teamCategory}
-            onDropdownChange={(value) => setTeamCategory(value)}
-          />
-
-          <AuthDropdown
-            title="Escolha um plano"
-            id="plan"
-            placeholder="Escolha seu plano"
-            options={plansOptions}
-            selectedvalue={plan}
-            onDropdownChange={(value) => setPlan(value)}
-            required
-          />
-
-          <AuthButton
-            name="register_submit"
-            id="register_submit"
-            value="Registrar"
-          />
-
-          <AuthRedirect
-            text="Já possui uma conta?"
-            path="/login"
-            pathtext="Login"
-          />
-
-          <StyledLink
-            text="Voltar ao menu"
+          <Button
             path="/"
-            color={theme.colors.secondary}
-            hovercolor={theme.colors.tertiary}
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
           />
-        </AuthForm>
-      </AuthContainer>
-    </Styled.RegisterPage>
+
+          <Button
+            path="/login"
+            text="Login"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
+            path="/register"
+            text="Registre-se"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
+
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+        </Nav>
+      </FloatingHeader>
+      <Styled.RegisterPage>
+        <Bubble>
+          <Subtitle text="Passo a passo" uppercase as="h4" size={theme.sizes.xlarge} />
+          <ListContainer>
+            <ListItem>
+              Informe seus dados pessoais com atenção e complete todos os campos obrigatórios.
+            </ListItem>
+
+            <ListItem>
+              Selecione o tipo de perfil que deseja criar
+            </ListItem>
+
+            <ListItem>
+              Valide sua conta: Confirme seu email e siga as instruções para concluir o processo de cadastro.
+            </ListItem>
+          </ListContainer>
+        </Bubble>
+
+        <AuthContainer>
+          <Subtitle text="Registre-se" uppercase as="h4" size={theme.sizes.xlarge} />
+
+          <AuthForm onSubmit={handleSubmit}>
+            <AuthInput
+              type="text"
+              name="username"
+              id="username"
+              title="Nome"
+              placeholder="Seu nome de usuário"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+
+            <AuthInput
+              type="email"
+              name="email"
+              id="email"
+              title="E-mail"
+              placeholder="Seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+
+            <AuthInput
+              type="password"
+              name="password"
+              id="password"
+              title="Senha"
+              placeholder="Sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+
+            <AuthInput
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              title="Confirmação de senha"
+              placeholder="Confirme sua senha"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+
+            <AuthDropdown
+              title="Qual o seu tipo de perfil?"
+              id="profileType"
+              placeholder="Escolha seu tipo de perfil"
+              options={profileTypeOptions}
+              selectedvalue={profileType}
+              onDropdownChange={(value) => setProfileType(value)}
+              required
+            />
+
+            <AuthDropdown
+              title="Qual categoria você se enquadra?"
+              id="competitiveCategory"
+              placeholder="Escolha sua categoria"
+              options={competitiveCategoryOptions}
+              selectedvalue={competitiveCategory}
+              onDropdownChange={(value) => setCompetitiveCategory(value)}
+              required
+            />
+
+            <AuthDropdown
+              title="Qual o seu nível competitivo?"
+              id="competitiveLevel"
+              placeholder="Escolha seu nível"
+              options={levelsOptions}
+              selectedvalue={competitiveLevel}
+              onDropdownChange={(value) => setCompetitiveLevel(value)}
+            />
+
+            <AuthDropdown
+              title="Deseja atuar em um time de qual categoria?"
+              id="teamCategory"
+              placeholder="Escolha a categoria do time"
+              options={teamCategoryOptions}
+              selectedvalue={teamCategory}
+              onDropdownChange={(value) => setTeamCategory(value)}
+            />
+
+            <AuthDropdown
+              title="Escolha um plano"
+              id="plan"
+              placeholder="Escolha seu plano"
+              options={plansOptions}
+              selectedvalue={plan}
+              onDropdownChange={(value) => setPlan(value)}
+              required
+            />
+
+            <AuthButton
+              name="register_submit"
+              id="register_submit"
+              value="Registrar"
+            />
+
+            <AuthRedirect
+              text="Já possui uma conta?"
+              path="/login"
+              pathtext="Login"
+            />
+
+            <StyledLink
+              text="Voltar para home"
+              path="/"
+              color={theme.colors.secondary}
+              hovercolor={theme.colors.tertiary}
+            />
+          </AuthForm>
+        </AuthContainer>
+      </Styled.RegisterPage>
+    </>
   );
 }

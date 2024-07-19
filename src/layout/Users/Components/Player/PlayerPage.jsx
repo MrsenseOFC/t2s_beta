@@ -19,9 +19,11 @@ import { Banner } from '../../../../components/elements/Banner/Banner';
 import { Button } from '../../../../components/elements/Button/Button';
 import { Text } from '../../../../components/elements/Text/Text';
 import { Row } from '../../../../components/RowContainer/Row';
+import { ListContainer, ListItem } from '../../../../components/elements/List/List-Styles';
+import { List } from '../../../../components/elements/List/List';
 
 export function PlayerPage({ children }) {
-  const [explanation, setExplanation] = useState(false);
+  const [explanation, setExplanation] = useState('step-1');
 
   return (
     <Styled.PlayerPageContainer>
@@ -53,35 +55,123 @@ export function PlayerPage({ children }) {
 
       <GridLayout>
 
-        <IconCard>
+        <IconCard
+          name="Busque oportunidades"
+          onclick={() => setExplanation(explanation === 'step-1' ? '' : 'step-1')}
+          active={explanation === 'step-1'}
+          activecolor={theme.colors.primary}
+        >
           <CheckIcon />
           <Subtitle text="Crie sua conta" size={theme.sizes.small} uppercase as="h3" />
-        </IconCard>
 
-        <IconCard>
-          <PersonEditIcon />
-          <Subtitle text="Edite seu perfil" size={theme.sizes.small} uppercase as="h3" />
-        </IconCard>
+          {explanation === 'step-1' && (
+            <Styled.Explanation>
+              <ListContainer>
+                <ListItem color={theme.colors.primary}>
+                  Acesse a plataforma e clique em "Registre-se".
+                </ListItem>
 
-        <IconCard>
-          <VideoAddIcon />
-          <Subtitle text="Mostre seu talento" size={theme.sizes.small} uppercase as="h3" />
+                <ListItem color={theme.colors.primary}>
+                  Informe seus dados pessoais com atenção e complete todos os campos obrigatórios.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Selecione a opção "Atleta" para se cadastrar como um atleta em busca de oportunidades.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Valide sua conta: Confirme seu email e siga as instruções para concluir o processo de cadastro.
+                </ListItem>
+              </ListContainer>
+            </Styled.Explanation>
+          )}
         </IconCard>
 
         <IconCard
-          onclick={() => setExplanation(!explanation)}
-          active={explanation}
+          name="Busque oportunidades"
+          onclick={() => setExplanation(explanation === 'step-2' ? '' : 'step-2')}
+          active={explanation === 'step-2'}
+          activecolor={theme.colors.primary}
+        >
+          <PersonEditIcon />
+          <Subtitle text="Edite seu perfil" size={theme.sizes.small} uppercase as="h3" />
+
+          {explanation === 'step-2' && (
+            <Styled.Explanation>
+              <ListContainer>
+                <ListItem color={theme.colors.primary}>
+                  Clique em "Minha area" para entrar na página do seu perfil.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Utilize imagens profissionais e de alta qualidade em seu perfil e banner para causar uma boa impressão.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Adicione detalhes sobre sua experiência, habilidades, formação e conquistas.
+                </ListItem>
+              </ListContainer>
+            </Styled.Explanation>
+          )}
+        </IconCard>
+
+        <IconCard
+          name="Busque oportunidades"
+          onclick={() => setExplanation(explanation === 'step-3' ? '' : 'step-3')}
+          active={explanation === 'step-3'}
+          activecolor={theme.colors.primary}
+        >
+          <VideoAddIcon />
+          <Subtitle text="Mostre seu talento" size={theme.sizes.small} uppercase as="h3" />
+
+          {explanation === 'step-3' && (
+            <Styled.Explanation>
+              <ListContainer>
+                <ListItem color={theme.colors.primary}>
+                  Em sua área acesse a opção "perfil" através do menu de navegação
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  No carrosel de mídias utilize o botão "+" para selecionar e enviar seus melhores conteúdos.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Inclua fotos e vídeos que demonstrem suas habilidades, técnicas e momentos de destaque em competições ou treinos.
+                </ListItem>
+              </ListContainer>
+            </Styled.Explanation>
+          )}
+        </IconCard>
+
+        <IconCard
+          name="Busque oportunidades"
+          onclick={() => setExplanation(explanation === 'step-4' ? '' : 'step-4')}
+          active={explanation === 'step-4'}
           activecolor={theme.colors.primary}
         >
           <BookOpenIcon />
           <Subtitle text="Busque oportunidades" size={theme.sizes.small} uppercase as="h3" />
 
-          {explanation && (
-            <>
-              <Styled.Explanation>
-                <Text text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem" />
-              </Styled.Explanation>
-            </>
+          {explanation === 'step-4' && (
+            <Styled.Explanation>
+              <ListContainer>
+                <ListItem color={theme.colors.primary}>
+                  Acesse a seção "Oportunidades" para visualizar as vagas disponíveis.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Utilize os filtros para encontrar oportunidades que se encaixam em seu perfil e interesses.
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Clique na vaga que te interessa, leia com atenção os detalhes e requisitos para saber se você se encaixa!
+                </ListItem>
+
+                <ListItem color={theme.colors.primary}>
+                  Se você se encaixa nos requisitos, preencha a área de texto com uma apresentação e clique em "Enviar" para dar o próximo passo.
+                </ListItem>
+              </ListContainer>
+            </Styled.Explanation>
           )}
         </IconCard>
 

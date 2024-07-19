@@ -14,6 +14,7 @@ import { Slide } from '../../components/elements/Slide/Slide';
 import { s2tData } from '../../contexts/s2tContext/s2tData';
 import { MobileNav } from '../../components/MobileNav/MobileNav';
 import { IconDiv } from '../../components/elements/IconDiv/IconDiv';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
 
 export function Benefits() {
   const [mobileHeader, setMobileHeader] = useState(false);
@@ -21,9 +22,9 @@ export function Benefits() {
   return (
     <Styled.BenefitsPage>
 
-      <StandardHeader>
+      <FloatingHeader>
 
-        <Logo size="250px" logo="/assets/images/pngs/logo.png" />
+        <Logo size="150px" logo="/assets/images/pngs/logo.png" />
 
         <Nav>
 
@@ -71,7 +72,7 @@ export function Benefits() {
             <MenuIcon />
           </IconDiv>
         ) }
-      </StandardHeader>
+      </FloatingHeader>
 
       {mobileHeader && (
         <MobileNav>

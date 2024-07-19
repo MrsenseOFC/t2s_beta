@@ -59,18 +59,3 @@ export const InvestmentsContainer = styled.article`
  
   `}
 `;
-
-export const TextContainer = styled.div`
-  ${({ theme }) => css`
-  animation: ${slideOut} 500ms;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1)
-    ),
-    url('/assets/images/backgrounds/slider-bg-1.png');
-   background-size: cover;
-   padding: ${theme.spacings.medium};
-  `}
-`;

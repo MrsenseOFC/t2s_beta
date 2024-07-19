@@ -27,18 +27,31 @@ export const AuthInputElement = styled.input`
   
 
     padding: ${theme.spacings.small};
+    box-shadow: 0px 0px 5px 1px ${theme.colors.transparent};
     transition: all 300ms ease-in-out;
     
     &:hover {
-      border: ${theme.borders.tertiary};
+      border: ${theme.borders.secondary};
     }
 
     &::-webkit-input-placeholder {
       color: ${theme.colors.white};
     }
 
+    &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(100%) sepia(0%) saturate(10000%) hue-rotate(210deg); 
+    display: flex;
+    transition: all 500ms ease-in-out;
+
+    &:hover {
+      filter: invert(0.8) brightness(50%) sepia(100%) saturate(10000%) hue-rotate(195deg); 
+    }
+    }
+
     &:focus {
       border: ${theme.borders.secondary};
+      box-shadow: 0px 0px 5px 1px ${theme.colors.secondary};
       outline: none;
     }
 

@@ -14,6 +14,10 @@ import { StyledLink } from '../../components/elements/StyledLink/StyledLink';
 import { Title } from '../../components/elements/Title/Title';
 import { theme } from '../../styles/theme';
 import { AuthContainer } from '../../components/elements/AuthElements/AuthWrapper/AuthWrapper-Styles';
+import { FloatingHeader } from '../../components/Headers/FloatingHeader/FloatingHeader';
+import { Logo } from '../../components/elements/Logo/Logo';
+import { Nav } from '../../components/Nav/Nav';
+import { Button } from '../../components/elements/Button/Button';
 
 export function Login() {
   const navigate = useNavigate();
@@ -39,9 +43,9 @@ export function Login() {
       });
 
       if (response.data && response.data.token) {
-        const token = response.data.token;
+        const { token } = response.data;
         localStorage.setItem('accessToken', token); // Armazena o token JWT no localStorage
-        const user = response.data.user;
+        const { user } = response.data;
 
         // Redirecionamento baseado no tipo de perfil
         if (user.profile_type === 'player') {
@@ -68,63 +72,119 @@ export function Login() {
   };
 
   return (
-    <Styled.LoginPage>
-      <AuthWrapper>
-        <AuthContainer>
-          <Title text="Login" size={theme.sizes.xxlarge} />
+    <>
 
-          <AuthForm onSubmit={handleSubmit} method="post">
-            <AuthInput
-              type="email"
-              name="email"
-              id="email_input"
-              placeholder="Seu email"
-              title="E-mail"
-              value={userData.email}
-              onChange={handleChange}
-              required
-            />
+      <FloatingHeader>
 
-            <AuthInput
-              type="password"
-              name="password"
-              id="password_input"
-              placeholder="Insira sua senha"
-              title="Senha"
-              value={userData.password}
-              onChange={handleChange}
-              required
-            />
+        <Logo size="150px" logo="/assets/images/pngs/logo.png" />
 
-            <AuthButton
-              name="login_submit"
-              id="login_submit"
-              value="Login"
-              onClick={handleSubmit}
-            />
+        <Nav>
 
-            <AuthOptions
-              checkboxtext="Lembrar login"
-              checkboxid="rememberMe"
-              path="/forgot-password"
-              pathtext="Esqueceu a senha?"
-            />
+          <Button
+            path="/"
+            text="Página principal"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
 
-            <AuthRedirect
-              text="Não possui uma conta?"
-              path="/register"
-              pathtext="Registre-se"
-            />
+          <Button
+            path="/login"
+            text="Login"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.black}
+            textcolor={theme.colors.primary}
+            texthover={theme.colors.primary}
+            border={theme.colors.primary}
+            borderhover={theme.colors.primary}
+            active
+          />
 
-            <StyledLink
-              text="Voltar ao menu"
-              path="/"
-              color={theme.colors.secondary}
-              hovercolor={theme.colors.tertiary}
-            />
-          </AuthForm>
-        </AuthContainer>
-      </AuthWrapper>
-    </Styled.LoginPage>
+          <Button
+            path="/register"
+            text="Registre-se"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+
+          <Button
+            path="/benefits"
+            text="Benefícios"
+            bgcolor={theme.colors.mediumblack}
+            bghover={theme.colors.mediumblack}
+            textcolor={theme.colors.white}
+            texthover={theme.colors.primary}
+            border={theme.colors.white}
+            borderhover={theme.colors.primary}
+          />
+        </Nav>
+      </FloatingHeader>
+
+      <Styled.LoginPage>
+        <AuthWrapper>
+          <AuthContainer>
+            <Title text="Login" size={theme.sizes.xxlarge} />
+
+            <AuthForm onSubmit={handleSubmit} method="post">
+              <AuthInput
+                type="email"
+                name="email"
+                id="email_input"
+                placeholder="Seu email"
+                title="E-mail"
+                value={userData.email}
+                onChange={handleChange}
+                required
+              />
+
+              <AuthInput
+                type="password"
+                name="password"
+                id="password_input"
+                placeholder="Insira sua senha"
+                title="Senha"
+                value={userData.password}
+                onChange={handleChange}
+                required
+              />
+
+              <AuthButton
+                name="login_submit"
+                id="login_submit"
+                value="Login"
+                onClick={handleSubmit}
+              />
+
+              <AuthOptions
+                checkboxtext="Lembrar login"
+                checkboxid="rememberMe"
+                path="/forgot-password"
+                pathtext="Esqueceu a senha?"
+              />
+
+              <AuthRedirect
+                text="Não possui uma conta?"
+                path="/register"
+                pathtext="Registre-se"
+              />
+
+              <StyledLink
+                text="Voltar para home"
+                path="/"
+                color={theme.colors.secondary}
+                hovercolor={theme.colors.tertiary}
+              />
+            </AuthForm>
+          </AuthContainer>
+        </AuthWrapper>
+      </Styled.LoginPage>
+    </>
   );
 }

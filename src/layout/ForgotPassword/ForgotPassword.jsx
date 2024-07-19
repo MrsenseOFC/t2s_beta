@@ -31,7 +31,7 @@ export function ForgotPassword() {
     <>
       <FloatingHeader>
 
-        <Logo size="250px" logo="/assets/images/pngs/logo.png" />
+        <Logo size="150px" logo="/assets/images/pngs/logo.png" />
 
         <Nav>
 

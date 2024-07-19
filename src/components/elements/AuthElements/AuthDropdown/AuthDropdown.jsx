@@ -15,7 +15,7 @@ export function AuthDropdown({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownText, setDropdownText] = useState(
-    options.find((option) => option.value === selectedvalue)?.text || ''
+    options.find((option) => option.value === selectedvalue)?.text || '',
   );
 
   const other = { value: 'other', text: 'Outro' };
@@ -40,11 +40,13 @@ export function AuthDropdown({
     <Styled.AuthDropdownContainer id={id}>
       {title && (
         <Styled.DropdownTitle>
-          {title} {required && '(Obrigatório)'}
+          {title}
+          {' '}
+          {required && '(Obrigatório)'}
         </Styled.DropdownTitle>
       )}
 
-      <Styled.DropdownButton onClick={toggleDropdown}>
+      <Styled.DropdownButton onClick={toggleDropdown} active={isOpen ? 'Active' : undefined}>
         {dropdownText || placeholder || 'Selecione'}
         {isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />}
       </Styled.DropdownButton>
@@ -82,7 +84,7 @@ AuthDropdown.propTypes = {
     PropTypes.shape({
       value: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   placeholder: PropTypes.string,
   title: PropTypes.string,

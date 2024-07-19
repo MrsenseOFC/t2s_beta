@@ -71,6 +71,7 @@ import { Investments } from './layout/Benefits/Components/Investments/Investment
 import { Events as EventsPage } from './layout/Benefits/Components/Events/Events';
 import { Users } from './layout/Users/Users';
 import { PlayerPage } from './layout/Users/Components/Player/PlayerPage';
+import { Logo } from './components/elements/Logo/Logo';
 
 register();
 
@@ -203,7 +204,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <StyledLink text="Precisa de ajuda?" color={theme.colors.lightgray} hovercolor={theme.colors.white} />
                   </Nav>
 
-                  <Text text="© 2024 Showcase 2 Transfer" />
+                  <Text text="© 2024 Talent 2 Show" color={theme.colors.primary} uppercase />
                 </Footer>
 
               </UniversityProvider>

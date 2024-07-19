@@ -19,12 +19,12 @@ export const IconCardContainer = styled.div`
 
     padding: ${theme.spacings.small};
     border: ${active ? `1px solid ${activecolor}` : theme.borders.white};
-    box-shadow: ${active ? `0px 0px 10px 4px ${activecolor}` : 'none'};
+    box-shadow: ${active ? `0px 0px 10px 2px ${activecolor}` : 'none'};
 
     transition: all 500ms ease-in-out ;
 
      &:hover {
-      box-shadow: ${active ? `0px 0px 10px 4px ${activecolor}` : `0px 0px 10px 4px ${theme.colors.gray}`};
+      box-shadow: ${active ? `0px 0px 10px 2px ${activecolor}` : `0px 0px 10px 2px ${theme.colors.gray}`};
 
        /* transform: scale(1.05); */
        background: ${bghover};
