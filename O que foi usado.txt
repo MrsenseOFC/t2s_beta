@@ -1,0 +1,22 @@
+
+
+
+Styled components:
+npm i styled-components
+
+
+Styled Icons
+npm i @styled-icons/evaicons-solid
+
+
+
+prop types:
+npm i -S prop-types
+
+
+react-router-dom:
+npm i react-router-dom@latest
+
+
+swiper:
+npm i swiper
