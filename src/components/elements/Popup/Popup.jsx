@@ -7,11 +7,11 @@ import { Button } from '../Button/Button';
 import { Text } from '../Text/Text';
 
 export function Popup({
-  isopen, onfirstclick, firstoption, firstpath, secondoption, secondpath, onsecondclick, title, subtitle,
+  isopen = true, onfirstclick, firstoption, firstpath, secondoption, secondpath, onsecondclick, title, subtitle,
 }) {
   return (
     <>
-      {isopen && <Styled.PopupOverlay />}
+      {isopen && (
 
       <Styled.PopupElement open={isopen}>
 
@@ -49,6 +49,7 @@ export function Popup({
           )}
         </Row>
       </Styled.PopupElement>
+      )}
     </>
   );
 }

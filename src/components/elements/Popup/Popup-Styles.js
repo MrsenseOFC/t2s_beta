@@ -47,7 +47,7 @@ export const PopupElement = styled.dialog`
      }
 
      ${ButtonElement} {
-      min-width: 180px;
+      min-width: 150px;
 
       @media ${theme.medias.mobile} {
         min-width: 70px;

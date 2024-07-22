@@ -60,6 +60,7 @@ export function Home({ islogged }) {
             <>
               <Button
                 path="/register"
+                newtab
                 text="Criar uma conta"
                 bgcolor={theme.colors.lightprimary}
                 bghover={theme.colors.primary}
@@ -71,6 +72,7 @@ export function Home({ islogged }) {
 
               <Button
                 path="/login"
+                newtab
                 text="Entrar"
                 bgcolor={theme.colors.lightprimary}
                 bghover={theme.colors.primary}

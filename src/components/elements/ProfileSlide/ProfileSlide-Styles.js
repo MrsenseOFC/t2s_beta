@@ -4,6 +4,7 @@ import { slideInLeft } from '../../../styles/animations';
 import { IconContainer } from '../IconDiv/IconDiv-Styles';
 import { AuthIconFileContainer } from '../AuthElements/AuthIconFile/AuthIconFile-Styles';
 import { AuthFormContainer } from '../AuthElements/AuthForm/AuthForm-Styles';
+import { PopupElement } from '../Popup/Popup-Styles';
 
 export const ProfileSlideWrapper = styled.div`
   ${({ theme }) => css`
@@ -77,6 +78,9 @@ export const MediaWrapper = styled.div`
   ${({ theme }) => css`
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     > img, video {
@@ -92,6 +96,10 @@ export const MediaWrapper = styled.div`
     transition: all 500ms ease-in-out;
     box-sizing: border-box;
     border: ${theme.borders.xtransparent};
+  }
+
+  ${PopupElement} {
+    max-width: 90%;
   }
 
 
@@ -115,9 +123,9 @@ export const TopIconsWrapper = styled.div`
     ${IconContainer} {
     width: auto;
     height: 100%;
-
     > svg {
      border-radius: 50%;
+     padding: 2px;
      background: rgba(0, 0, 0, 0.5);
 
      &:hover {

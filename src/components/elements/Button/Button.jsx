@@ -5,8 +5,9 @@ import { StyledLink } from '../StyledLink/StyledLink';
 import { theme } from '../../../styles/theme';
 
 export function Button({
-  onclick, gradient, active, path, text, size = theme.sizes.small, textcolor = theme.colors.white, texthover = '', bgcolor = theme.colors.black, bghover = '', border = theme.colors.black, borderhover = '',
+  onclick, newtab, gradient, active, path, text, size = theme.sizes.small, textcolor = theme.colors.white, texthover = '', bgcolor = theme.colors.black, bghover = '', border = theme.colors.black, borderhover = '',
 }) {
+  console.log(newtab);
   const ButtonElement = (
     <Styled.ButtonElement
       textcolor={textcolor}
@@ -15,6 +16,7 @@ export function Button({
       bghover={bghover}
       border={border}
       size={size}
+      newtab={newtab}
       borderhover={borderhover}
       onClick={onclick}
       active={active ? 'active' : undefined}
@@ -24,12 +26,20 @@ export function Button({
     </Styled.ButtonElement>
   );
 
-  return path ? <StyledLink path={path}>{ButtonElement}</StyledLink> : ButtonElement;
+  return path ? (
+    <StyledLink
+      path={path}
+      newtab={newtab}
+    >
+      {ButtonElement}
+    </StyledLink>
+  ) : ButtonElement;
 }
 
 Button.propTypes = {
   onclick: Prop.func,
   path: Prop.string,
+  newtab: Prop.bool,
   text: Prop.string,
   size: Prop.string,
   textcolor: Prop.string,

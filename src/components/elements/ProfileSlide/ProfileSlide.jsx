@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import { Add as AddIcon } from '@styled-icons/material-outlined/Add';
 import { Fullscreen } from '@styled-icons/material-outlined';
+import { Delete } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './ProfileSlide-Styles';
 import { Title } from '../Title/Title';
 import { IconDiv } from '../IconDiv/IconDiv';
@@ -14,12 +15,15 @@ import { RateIcons } from '../RateIcons/RateIcons';
 import { ReportModal } from '../ReportModal/ReportModal';
 import { ImageModal } from '../ImageModal/ImageModal';
 import { ReportIcon } from '../ReportIcon/ReportIcon';
+import { RemoveIcon } from '../RemoveIcon/RemoveIcon';
+import { Popup } from '../Popup/Popup';
 
 export function ProfileSlide({
   items, title, publicview = false, ownerview,
 }) {
   const [reportingMedia, setReportingMedia] = useState('');
   const [fullscreenImage, setFullscreenImage] = useState('');
+  const [deleteImage, setDeleteImage] = useState('');
 
   const handleFullscreen = (item) => {
     setFullscreenImage(item.src);
@@ -27,6 +31,15 @@ export function ProfileSlide({
 
   const handleReporting = (item) => {
     setReportingMedia(reportingMedia ? '' : item.id);
+  };
+
+  const handleIsDeleting = (item) => {
+    setDeleteImage(deleteImage === item.id ? '' : item.id);
+  };
+
+  const handleConfirmDelete = (item) => {
+    // lógica para excluir imagem
+    setDeleteImage('');
   };
 
   return (
@@ -92,6 +105,32 @@ export function ProfileSlide({
                       </IconDiv>
 
                     </Styled.BottomIconsWrapper>
+                  </>
+                )}
+
+                {ownerview && (
+                  <>
+
+                    <Styled.TopIconsWrapper>
+                      <IconDiv
+                        onclick={() => handleIsDeleting(item)}
+                        active={deleteImage === item.id}
+                        activecolor={theme.colors.red}
+                        hovercolor={theme.colors.lightred}
+                      >
+                        <Delete />
+                      </IconDiv>
+                    </Styled.TopIconsWrapper>
+
+                    <Popup
+                      isopen={deleteImage === item.id}
+                      title="Tem certeza que deseja excluir essa imagem?"
+                      firstoption="Sim"
+                      secondoption="Não"
+                      onfirstclick={() => handleConfirmDelete(item)}
+                      onsecondclick={() => handleIsDeleting('')}
+                    />
+
                   </>
                 )}
 
