@@ -72,6 +72,7 @@ import { Events as EventsPage } from './layout/Benefits/Components/Events/Events
 import { Users } from './layout/Users/Users';
 import { PlayerPage } from './layout/Users/Components/Player/PlayerPage';
 import { Logo } from './components/elements/Logo/Logo';
+import { ClubPage } from './layout/Users/Components/Club/ClubPage';
 
 register();
 
@@ -105,6 +106,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
                   <Route path="/users" element={<Users />}>
                     <Route path="player" element={<PlayerPage />} />
+                    <Route path="club" element={<ClubPage />} />
+
                   </Route>
 
                   {/* Rota do dashboard para jogadores + subrotas dele */}

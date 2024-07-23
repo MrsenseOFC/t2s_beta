@@ -38,7 +38,7 @@ export function ProfilePicture({
     <Styled.ProfilePictureContainer>
 
       <Styled.ProfilePictureElement>
-        <Styled.Picture src={profilePicture || '/assets/images/background.png'} alt="Foto de perfil do usuário" />
+        <Styled.Picture src={profilePicture || '/assets/images/logos/vertical-background.png'} alt="Foto de perfil do usuário" />
         {ownerview && (
           <Styled.Badge>
             <AuthIconFile

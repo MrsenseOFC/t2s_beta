@@ -26,7 +26,6 @@ export const IconCardContainer = styled.div`
      &:hover {
       box-shadow: ${active ? `0px 0px 10px 2px ${activecolor}` : `0px 0px 10px 2px ${theme.colors.gray}`};
 
-       /* transform: scale(1.05); */
        background: ${bghover};
 
         > svg {
@@ -40,6 +39,7 @@ export const IconCardContainer = styled.div`
         height: 50%;
         transition: all 500ms ease-in-out ;
         color: ${active ? activecolor : color};
+        transform: ${active ? 'scale(1.05)' : 'none'};
       }
   `}
 `;

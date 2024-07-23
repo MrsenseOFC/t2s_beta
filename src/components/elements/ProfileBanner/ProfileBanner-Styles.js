@@ -43,10 +43,12 @@ export const ProfileBannerWrapper = styled.div`
       ${AuthIconFileContainer} {
         width: 40px;
         height: 40px;
+  
 
         @media ${theme.medias.mobile} {
           width: 25px;
-         height: 25px;
+          height: 25px;
+          right: -2px;
         }
       }
     }

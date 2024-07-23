@@ -86,7 +86,7 @@ export function GridEditableProposals({ items, title }) {
                   </GridLayoutContainer>
                 )
                   : (
-                    <Text text="Você ainda não publicou nenhuma proposta. Que tal começar agora? Clique no ícone de ‘+’ acima para criar a sua primeira proposta!" />
+                    <Text text="Você ainda não publicou nenhuma proposta. Que tal começar agora? Clique no ícone de ‘+’ acima para criar a sua primeira oportunidade!" />
                   )}
 
               {displayItems.length > 0 && (

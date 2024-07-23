@@ -231,7 +231,7 @@ export function NewProposal({ onclick }) {
           <AuthButton
             name="createProposal_submit"
             id="createProposal_submit"
-            value="Publicar Proposta"
+            value="Publicar Oportunidade"
             onclick={(e) => handleSubmit(e)}
           />
         </AuthForm>

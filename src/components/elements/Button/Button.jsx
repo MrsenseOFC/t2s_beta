@@ -7,7 +7,6 @@ import { theme } from '../../../styles/theme';
 export function Button({
   onclick, newtab, gradient, active, path, text, size = theme.sizes.small, textcolor = theme.colors.white, texthover = '', bgcolor = theme.colors.black, bghover = '', border = theme.colors.black, borderhover = '',
 }) {
-  console.log(newtab);
   const ButtonElement = (
     <Styled.ButtonElement
       textcolor={textcolor}
@@ -16,7 +15,6 @@ export function Button({
       bghover={bghover}
       border={border}
       size={size}
-      newtab={newtab}
       borderhover={borderhover}
       onClick={onclick}
       active={active ? 'active' : undefined}
@@ -27,10 +25,7 @@ export function Button({
   );
 
   return path ? (
-    <StyledLink
-      path={path}
-      newtab={newtab}
-    >
+    <StyledLink path={path} newtab={newtab}>
       {ButtonElement}
     </StyledLink>
   ) : ButtonElement;

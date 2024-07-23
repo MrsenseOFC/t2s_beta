@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { fadeIn } from '../../../../styles/animations';
 
-export const PlayerPageContainer = styled.article`
+export const ClubPageContainer = styled.article`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;

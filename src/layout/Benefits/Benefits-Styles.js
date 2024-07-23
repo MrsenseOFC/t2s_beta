@@ -7,6 +7,7 @@ import { FloatingHeaderContainer } from '../../components/Headers/FloatingHeader
 import { BannerContainer } from '../../components/elements/Banner/Banner-Styles';
 import { SubtitleElement } from '../../components/elements/Subtitle/Subtitle-Styles';
 import { TitleElement } from '../../components/elements/Title/Title-Styles';
+import { ListItem } from '../../components/elements/List/List-Styles';
 
 export const BenefitsPage = styled.section`
   ${({ theme }) => css`
@@ -17,9 +18,10 @@ export const BenefitsPage = styled.section`
 
     ${NavContainer} {
       @media ${theme.medias.tablet} {
-      display: none;
+       display: none;
+      }
     }
-    }
+
 
     ${IconContainer} {
       display: none;
@@ -36,11 +38,35 @@ export const BenefitsPage = styled.section`
   }
 
   ${BannerContainer} {
+    padding-top: 50px;
+
+    
+    @media ${theme.medias.smallpc} {
+      max-height: 500px;
+    }
+
+    @media ${theme.medias.tablet} {
+      max-height: 600px;
+      height: 600px;
+    }
+
+    @media ${theme.medias.mobile} {
+      max-height: 600px;
+      height: 600px;
+
+    }
+
     ${SubtitleElement}, ${TitleElement} {
       font-weight: 900;
       margin-bottom: 0px;
       text-align: center;
       text-shadow: 3px 3px 1px ${theme.colors.lightblack};
+    }
+  }
+
+  ${ListItem} {
+    &::before {
+      display: none;
     }
   }
   

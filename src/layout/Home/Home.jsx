@@ -183,6 +183,7 @@ export function Home({ islogged }) {
                 <Button
                   path="/login"
                   text="Login"
+                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -194,6 +195,7 @@ export function Home({ islogged }) {
                 <Button
                   path="/register"
                   text="Registre-se"
+                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -270,6 +272,7 @@ export function Home({ islogged }) {
                 <Button
                   path="/login"
                   text="Login"
+                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -281,6 +284,7 @@ export function Home({ islogged }) {
                 <Button
                   path="/register"
                   text="Registre-se"
+                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}

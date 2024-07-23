@@ -8,12 +8,12 @@ import { slideIn, slideOut } from '../../../../styles/animations';
 
 export const InvestmentsContainer = styled.article`
   ${({ theme }) => css`
- 
      text-align: center;
      display: flex;
      flex-direction: column;
 
      ${BannerSlideWrapper} {
+
       .swiper-slide {
        > ${LinkContainer} {
          gap: ${theme.spacings.small};

@@ -122,6 +122,16 @@ export function ProfileSlide({
                       </IconDiv>
                     </Styled.TopIconsWrapper>
 
+                    <Styled.BottomIconsWrapper>
+                      <IconDiv
+                        active={fullscreenImage === item.src}
+                        name="Tela cheia"
+                        onclick={() => handleFullscreen(item)}
+                      >
+                        <Fullscreen />
+                      </IconDiv>
+                    </Styled.BottomIconsWrapper>
+
                     <Popup
                       isopen={deleteImage === item.id}
                       title="Tem certeza que deseja excluir essa imagem?"
@@ -201,7 +211,7 @@ export function ProfileSlide({
 
       {publicview && <ReportModal imageid={reportingMedia} onclick={() => setReportingMedia('')} />}
 
-      {publicview && <ImageModal imagesrc={fullscreenImage} onclick={() => setFullscreenImage('')} />}
+      <ImageModal imagesrc={fullscreenImage} onclick={() => setFullscreenImage('')} />
 
     </Styled.ProfileSlideWrapper>
   );

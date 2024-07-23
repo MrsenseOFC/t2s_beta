@@ -184,7 +184,6 @@ export function Register() {
               type="text"
               name="username"
               id="username"
-              title="Nome"
               placeholder="Seu nome de usuário"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -195,7 +194,6 @@ export function Register() {
               type="email"
               name="email"
               id="email"
-              title="E-mail"
               placeholder="Seu e-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -206,7 +204,6 @@ export function Register() {
               type="password"
               name="password"
               id="password"
-              title="Senha"
               placeholder="Sua senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -217,7 +214,6 @@ export function Register() {
               type="password"
               name="confirmPassword"
               id="confirmPassword"
-              title="Confirmação de senha"
               placeholder="Confirme sua senha"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -285,7 +281,7 @@ export function Register() {
             />
 
             <StyledLink
-              text="Voltar para home"
+              text="Voltar para a home"
               path="/"
               color={theme.colors.secondary}
               hovercolor={theme.colors.tertiary}

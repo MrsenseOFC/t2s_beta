@@ -5,7 +5,7 @@ import { PersonEdit as PersonEditIcon } from '@styled-icons/fluentui-system-fill
 import { BookOpenGlobe as BookOpenIcon } from '@styled-icons/fluentui-system-filled/BookOpenGlobe';
 import { Image as ImageIcon } from '@styled-icons/fluentui-system-filled/Image';
 import { VideoAdd as VideoAddIcon } from '@styled-icons/fluentui-system-filled';
-import * as Styled from './PlayerPage-Styles';
+import * as Styled from './ClubPage-Styles';
 import { Title } from '../../../../components/elements/Title/Title';
 import { GridLayout } from '../../../../components/GridLayout/GridLayout';
 import { IconDiv } from '../../../../components/elements/IconDiv/IconDiv';
@@ -22,11 +22,11 @@ import { Row } from '../../../../components/RowContainer/Row';
 import { ListContainer, ListItem } from '../../../../components/elements/List/List-Styles';
 import { List } from '../../../../components/elements/List/List';
 
-export function PlayerPage({ children }) {
+export function ClubPage({ children }) {
   const [explanation, setExplanation] = useState('step-1');
 
   return (
-    <Styled.PlayerPageContainer>
+    <Styled.ClubPageContainer>
       <Banner backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png">
         <Subtitle
           as="h2"
@@ -36,7 +36,7 @@ export function PlayerPage({ children }) {
         />
         <Text
           size={theme.sizes.large}
-          text="Trabalhamos com atletas de todos os níveis, incluindo amadores, profissionais, semi profissionais e de categorias de base"
+          text="Trabalhamos com clubes de todos os níveis, incluindo amadores, profissionais e semi profissionais "
         />
         <Button
           path="/register"
@@ -76,7 +76,7 @@ export function PlayerPage({ children }) {
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Selecione a opção "Atleta" para se cadastrar como um atleta em busca de oportunidades.
+                  Selecione a opção "Clube" para se cadastrar como um clube em busca de novos talentos.
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
@@ -104,11 +104,11 @@ export function PlayerPage({ children }) {
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Utilize imagens profissionais e de alta qualidade em seu perfil e banner para causar uma boa impressão.
+                  Utilize imagens profissionais e de alta qualidade em seu perfil e banner para causar uma boa impressão sobre o seu clube.
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Adicione detalhes sobre sua experiência, habilidades, formação e conquistas.
+                  Complete seu perfil! Revele suas conquistas memoráveis, o estádio que te coroa e o treinador que te impulsiona.
                 </ListItem>
               </ListContainer>
             </Styled.Explanation>
@@ -122,7 +122,7 @@ export function PlayerPage({ children }) {
           activecolor={theme.colors.primary}
         >
           <VideoAddIcon />
-          <Subtitle text="Mostre seu talento" size={theme.sizes.small} uppercase as="h3" />
+          <Subtitle text="Mostre o seu clube" size={theme.sizes.small} uppercase as="h3" />
 
           {explanation === 'step-3' && (
             <Styled.Explanation>
@@ -136,7 +136,7 @@ export function PlayerPage({ children }) {
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Inclua fotos e vídeos que demonstrem suas habilidades, técnicas e momentos de destaque em competições ou treinos.
+                  Inclua fotos e vídeos que demonstrem os jogadores treinando, momentos de destaque em competições ou o dia a dia do seu clube.
                 </ListItem>
               </ListContainer>
             </Styled.Explanation>
@@ -144,32 +144,33 @@ export function PlayerPage({ children }) {
         </IconCard>
 
         <IconCard
-          name="Busque oportunidades"
+          name="Busque talentos"
           onclick={() => setExplanation(explanation === 'step-4' ? '' : 'step-4')}
           active={explanation === 'step-4'}
           activecolor={theme.colors.primary}
         >
           <BookOpenIcon />
-          <Subtitle text="Busque oportunidades" size={theme.sizes.small} uppercase as="h3" />
+          <Subtitle text="Busque talentos" size={theme.sizes.small} uppercase as="h3" />
 
           {explanation === 'step-4' && (
             <Styled.Explanation>
               <ListContainer>
                 <ListItem color={theme.colors.primary}>
-                  Acesse a seção "Oportunidades" para visualizar as vagas disponíveis.
+                  Acesse a seção "Minhas oportunidades" para visualizar suas oportunidades disponíveis.
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Utilize os filtros para encontrar oportunidades que se encaixam em seu perfil e interesses.
+                  Clique no ícone "+" para iniciar a criação de uma nova oportunidade.
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Clique na vaga que te interessa, leia com atenção os detalhes e requisitos para saber se você se encaixa!
+                  Clique em uma oportunidade existente para editar seus detalhes a qualquer momento.
                 </ListItem>
 
                 <ListItem color={theme.colors.primary}>
-                  Se você se encaixa nos requisitos, preencha a área de texto com uma apresentação e clique em "Enviar" para dar o próximo passo.
+                  Acesse a seção "jogadores" e utilize os filtros para descobrir os talentos que podem elevar o seu time ao próximo nível.
                 </ListItem>
+
               </ListContainer>
             </Styled.Explanation>
           )}
@@ -196,7 +197,7 @@ export function PlayerPage({ children }) {
 
         <Text
           size={theme.sizes.large}
-          text="Crie o seu perfil, compartilhe suas melhores fotos e vídeos e deixe que o mundo descubra o seu talento."
+          text="Crie o seu perfil, mostre o seu clube ao mundo e busque novos talentos."
         />
 
         <Row>
@@ -228,10 +229,10 @@ export function PlayerPage({ children }) {
 
       </Banner>
 
-    </Styled.PlayerPageContainer>
+    </Styled.ClubPageContainer>
   );
 }
 
-PlayerPage.propTypes = {
+ClubPage.propTypes = {
 
 };

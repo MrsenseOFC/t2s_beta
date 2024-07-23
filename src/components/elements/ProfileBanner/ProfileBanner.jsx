@@ -11,7 +11,7 @@ export function ProfileBanner({ backgroundimagesrc, children, ownerview }) {
   return (
     <Styled.ProfileBannerWrapper backgroundimagesrc={backgroundimagesrc}>
 
-      <Styled.ProfileBannerContainer backgroundimagesrc={backgroundimagesrc}>
+      <Styled.ProfileBannerContainer>
         {children}
       </Styled.ProfileBannerContainer>
 
