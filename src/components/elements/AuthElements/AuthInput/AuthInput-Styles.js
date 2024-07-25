@@ -8,7 +8,7 @@ export const AuthInputContainer = styled.label`
     flex-direction: column;
     color: ${theme.colors.lightgray};
     font-size: ${theme.sizes.medium};
-
+    font-family: ${theme.fonts.primary};
     @media ${theme.medias.mobile} {
       font-size: ${theme.sizes.small};
     }

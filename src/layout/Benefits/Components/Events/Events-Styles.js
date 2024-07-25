@@ -5,6 +5,7 @@ import { BannerSlideWrapper } from '../../../../components/elements/BannerSlide/
 import { LinkContainer } from '../../../../components/elements/StyledLink/StyledLink-Styles';
 import { ListContainer, ListItem } from '../../../../components/elements/List/List-Styles';
 import { slideIn, slideOut } from '../../../../styles/animations';
+import { GridLayoutContainer } from '../../../../components/GridLayout/GridLayout-Styles';
 
 export const EventsContainer = styled.article`
   ${({ theme }) => css`
@@ -14,24 +15,10 @@ export const EventsContainer = styled.article`
      display: flex;
      flex-direction: column;
 
-     ${BannerSlideWrapper} {
-      .swiper-slide {
-       > ${LinkContainer} {
-         gap: ${theme.spacings.small};
-            > img {
-              width: 100%;
-              height: 100%;
-              max-width: 600px;
-              border-radius: 12px
-           }
-      }
-      }
-     }
 
 
      & ${ListContainer} {
       animation: ${slideIn} 500ms;
-
      }
 
      & ${ListItem} {
@@ -57,6 +44,7 @@ export const EventsContainer = styled.article`
      > ${TextElement} {
       animation: ${slideIn} 500ms;
      }
- 
+
+    
   `}
 `;

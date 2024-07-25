@@ -1,5 +1,5 @@
 import Prop from 'prop-types';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import * as Styled from './Events-Styles';
 import { Text } from '../../../../components/elements/Text/Text';
 import { Title } from '../../../../components/elements/Title/Title';
@@ -12,8 +12,15 @@ import { StyledLink } from '../../../../components/elements/StyledLink/StyledLin
 import { ListContainer, ListItem, ListWrapper } from '../../../../components/elements/List/List-Styles';
 import { s2tData } from '../../../../contexts/s2tContext/s2tData';
 import { Banner } from '../../../../components/elements/Banner/Banner';
+import { FloatingMenu } from '../../../../components/FloatingMenu/FloatingMenu';
+import { EventModal } from './Components/EventModal/EventModal';
+import { EventCard } from './Components/EventCard/EventCard';
+import { GridLayout } from '../../../../components/GridLayout/GridLayout';
+import { GridEvents } from './Components/GridEvents/GridEvents';
 
-export function Events() {
+export function Events({ items }) {
+  const [selectedEvent, setSelectedEvent] = useState();
+
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
@@ -53,33 +60,7 @@ export function Events() {
         </ListWrapper>
       </Banner>
 
-      <BannerSlide autoplay slidesperview={3}>
-
-        <StyledLink path="https://beneficios.plataformalions.com/categoria/novidades/" newtab>
-          <img src="/assets/images/others/business.png" alt="" />
-        </StyledLink>
-
-        <StyledLink path="https://beneficios.plataformalions.com/categoria/novidades/" newtab>
-          <img src="/assets/images/others/business.png" alt="" />
-        </StyledLink>
-
-        <StyledLink path="https://beneficios.plataformalions.com/categoria/novidades/" newtab>
-          <img src="/assets/images/others/business.png" alt="" />
-        </StyledLink>
-
-        <StyledLink path="https://beneficios.plataformalions.com/categoria/novidades/" newtab>
-          <img src="/assets/images/others/business.png" alt="" />
-        </StyledLink>
-
-        <StyledLink path="https://beneficios.plataformalions.com/categoria/novidades/" newtab>
-          <img src="/assets/images/others/business.png" alt="" />
-        </StyledLink>
-
-        <StyledLink path="https://beneficios.plataformalions.com/categoria/novidades/" newtab>
-          <img src="/assets/images/others/business.png" alt="" />
-        </StyledLink>
-
-      </BannerSlide>
+      <GridEvents items={items} />
 
       <Slide items={s2tData.photos.benefits} title="Outros benefícios T2S" />
 

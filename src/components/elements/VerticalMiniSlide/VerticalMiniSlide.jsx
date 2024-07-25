@@ -44,9 +44,9 @@ export function VerticalMiniSlide({ items, title, type }) {
               {items.map((item) => (
                 <SwiperSlide key={item.id}>
                   <EventCard
-                    title={item.title}
-                    subtitle={item.subtitle}
-                    text={item.text}
+                    title={item.hour}
+                    subtitle={item.title}
+                    text={item.subtitle}
                     path={item.path}
                   />
                 </SwiperSlide>

@@ -11,6 +11,7 @@ import { StandardHeaderContainer } from '../../components/Headers/StandardHeader
 import { GridLayoutContainer } from '../../components/GridLayout/GridLayout-Styles.js';
 import { AuthDropdownContainer, DropdownButton, DropdownItem } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown-Styles.js';
 import { MobileNavContainer } from '../../components/MobileNav/MobileNav-Styles.js';
+import { BannerContainer } from '../../components/elements/Banner/Banner-Styles.js';
 
 export const HomePage = styled.main`
   ${({ theme }) => css`
@@ -129,6 +130,11 @@ export const HomePage = styled.main`
 
   ${DropdownItem} {
     padding: ${theme.spacings.xsmall};
+  }
+
+  ${BannerContainer} {
+    height: 270px;
+    border: none;
   }
  
   `}

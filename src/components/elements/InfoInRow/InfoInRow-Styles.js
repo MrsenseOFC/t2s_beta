@@ -5,7 +5,6 @@ export const InfoInRowElement = styled.div`
     color: ${theme.colors.white};
     text-transform: ${uppercase};
     font-family: ${theme.fonts.primary};
-    
     display: flex;
     flex-direction: row;
     align-items: center;

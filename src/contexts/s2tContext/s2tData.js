@@ -1,6 +1,55 @@
 // armazena todos os dados da Showcase2Transfer
 export const s2tData = {
 
+  partners: [
+    {
+      id: 1,
+      name: 'ansa',
+      imagesrc: '/assets/images/logos/ansa.png',
+    },
+
+    {
+      id: 2,
+      name: 'ansep',
+      imagesrc: '/assets/images/logos/ansep.png',
+    },
+
+    {
+      id: 3,
+      name: 'lions-bank',
+      imagesrc: '/assets/images/logos/lionsbank.png',
+    },
+
+    {
+      id: 4,
+      name: 'brazusa',
+      imagesrc: '/assets/images/logos/brazusa.png',
+    },
+    {
+      id: 5,
+      name: 'ansa',
+      imagesrc: '/assets/images/logos/ansa.png',
+    },
+
+    {
+      id: 6,
+      name: 'ansep',
+      imagesrc: '/assets/images/logos/ansep.png',
+    },
+
+    {
+      id: 7,
+      name: 'lions-bank',
+      imagesrc: '/assets/images/logos/lionsbank.png',
+    },
+
+    {
+      id: 8,
+      name: 'brazusa',
+      imagesrc: '/assets/images/logos/brazusa.png',
+    },
+  ],
+
   products: {
     shirts: [
       {
@@ -134,50 +183,86 @@ export const s2tData = {
   events: [
     {
       id: 1,
-      title: '26/06/2024',
-      subtitle: '16:30',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      title: 'Tour',
+      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elitaaaaaaaaaaaaaaaaa',
+      organizer: 'Talent 2 Show',
+      startDate: '01-06-2024',
+      endDate: '10-06-2024',
+      startHour: '16:30',
+      location: 'Andorra',
       path: '/',
+      src: '/assets/images/others/leagues.png',
     },
 
     {
       id: 2,
-      title: '30/06/2024',
-      subtitle: '18:20',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      title: 'Partida amistosa',
+      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      organizer: 'Talent 2 Show',
+      startDate: '01-06-2024',
+      endDate: '10-06-2024',
+      startHour: '16:30',
+      location: 'Andorra',
       path: '/',
+      src: '/assets/images/others/leagues.png',
     },
 
     {
       id: 3,
-      title: '05/07/2024',
-      subtitle: '20:00',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      title: 'Viagem',
+      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      organizer: 'Talent 2 Show',
+      startDate: '01-06-2024',
+      endDate: '10-06-2024',
+      startHour: '16:30',
+      location: 'Andorra',
       path: '/',
+      src: '/assets/images/others/leagues.png',
     },
 
     {
       id: 4,
-      title: '10/07/2024',
-      subtitle: '22:30',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elitvo',
+      title: 'Encontro com craque',
+      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      organizer: 'Talent 2 Show',
+      startDate: '01-06-2024',
+      endDate: '10-06-2024',
+      startHour: '16:30',
+      location: 'Andorra',
       path: '/',
+      src: '/assets/images/others/leagues.png',
     },
 
     {
       id: 5,
-      title: '12/07/2024',
-      subtitle: '10:00',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elitisa',
+      title: 'Tour',
+      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      organizer: 'Talent 2 Show',
+      startDate: '01-06-2024',
+      endDate: '10-06-2024',
+      startHour: '16:30',
+      location: 'Andorra',
       path: '/',
+      src: '/assets/images/others/leagues.png',
     },
 
     {
       id: 6,
-      title: '18/07/2024',
-      subtitle: '09:30',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      title: 'Partida',
+      subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      organizer: 'Talent 2 Show',
+      startDate: '01-06-2024',
+      endDate: '10-06-2024',
+      startHour: '16:30',
+      location: 'Andorra',
       path: '/',
+      src: '/assets/images/others/leagues.png',
     },
   ],
 

@@ -18,7 +18,7 @@ export const AuthOptionsContainer = styled.div`
     > label {
      display: flex;
      flex-direction: row;
-     gap: 5px;
+     gap: ${theme.spacings.xsmall};
     }
   `}
 `;

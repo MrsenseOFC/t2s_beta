@@ -18,6 +18,8 @@ import { VerticalMiniSlide } from '../../components/elements/VerticalMiniSlide/V
 import { VerticalSoloSlide } from '../../components/elements/VerticalSoloSlide/VerticalSoloSlide';
 import { VerticalVideoSlide } from '../../components/elements/VerticalVideoSlide/VerticalVideoSlide';
 import { AuthDropdown } from '../../components/elements/AuthElements/AuthDropdown/AuthDropdown';
+import { MiniSlide } from '../../components/elements/MiniSlide/MiniSlide';
+import { Banner } from '../../components/elements/Banner/Banner';
 
 export function Home({ islogged }) {
   const s2tContext = useContext(S2tContext);
@@ -381,6 +383,9 @@ export function Home({ islogged }) {
 
       <Slide items={s2tState.photos.benefits} title="Benefícios" />
 
+      {/* <Banner backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png" backgroundfixed> */}
+      <MiniSlide type="partners" title="Parceiros" autoplay items={s2tState.partners} />
+      {/* </Banner> */}
     </Styled.HomePage>
   );
 }

@@ -71,7 +71,6 @@ export const UserCardElement = styled.div`
       box-shadow: 0px 0px 10px 1px ${theme.colors.white} inset;
 
       & img {
-       background: red;
        filter: opacity(0.15);
       }
     }

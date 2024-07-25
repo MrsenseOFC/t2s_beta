@@ -24,8 +24,6 @@ export const BannerSlideWrapper = styled.div`
     justify-content: center;
     padding: ${theme.spacings.small};
 
-
-
     @media ${theme.medias.smallpc} {
       max-height: 500px;
     }

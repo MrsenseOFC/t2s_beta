@@ -73,6 +73,7 @@ import { Users } from './layout/Users/Users';
 import { PlayerPage } from './layout/Users/Components/Player/PlayerPage';
 import { Logo } from './components/elements/Logo/Logo';
 import { ClubPage } from './layout/Users/Components/Club/ClubPage';
+import { NewEvent } from './components/elements/NewEvent/NewEvent';
 
 register();
 
@@ -101,7 +102,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <Route path="/benefits" element={<Benefits />}>
                     <Route path="club" element={<BenefitsClub />} />
                     <Route path="investments" element={<Investments />} />
-                    <Route path="events" element={<EventsPage />} />
+                    <Route path="events" element={<EventsPage items={s2tData.events} />} />
                   </Route>
 
                   <Route path="/users" element={<Users />}>
@@ -158,6 +159,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Route path="events" element={<Events />} />
                     <Route path="contacts" element={<h1>Em construção... :)</h1>} />
                     <Route path="friends" element={<Friends friends={clubData.friends} />} />
+                    <Route path="my-events" element={<NewEvent />} />
                     <Route path="store" element={<Store />} />
                     <Route path="my-affiliates" element={<MyAffiliates affiliates={s2tData.users.scouts} />} />
                     <Route path="s2t+" element={<S2TPlus />} />

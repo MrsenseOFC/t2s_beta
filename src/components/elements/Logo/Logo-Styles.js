@@ -8,18 +8,19 @@ export const LogoElement = styled.div`
     align-items: center;
     justify-content: center;
     user-select: none;
+    width: ${size};
 
-    
-    > img {
-      width: ${size};
-
-      @media ${theme.medias.tablet} {
+    @media ${theme.medias.tablet} {
         width: 150px;
       }
 
       @media ${theme.medias.mobile} {
         width: 110px;
       }
+    
+    > img {
+      width: 100%;
+      height: 100%;
     }
   `}
 `;
