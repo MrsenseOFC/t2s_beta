@@ -18,7 +18,8 @@ export const RegisterPage = styled.section`
      display: flex;
      height: 100%;
      width: 100%;
-     flex-direction: row;
+     min-height: 1000px;
+     flex-direction: center;
      justify-content: space-around;
      gap: ${theme.spacings.medium};
      padding-top: 110px;
@@ -55,7 +56,7 @@ export const RegisterPage = styled.section`
      ${BubbleContainer} {
       max-width: 400px;
       height: 100%;
-
+      
       @media (max-width: 1440px) {
         max-width: 700px;
       }

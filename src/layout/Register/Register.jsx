@@ -53,14 +53,14 @@ export function Register() {
     };
 
     try {
-      const response = await axios.post('https://showcase2transfer.onrender.com/api/auth/register', input);
+      const response = await axios.post('https://talent2show.onrender.com/api/auth/register', input);
       console.log('Resposta do servidor:', response.data);
 
       localStorage.setItem('username', username);
-
       navigate('/login');
     } catch (error) {
-      console.error('Erro ao registrar usuário:', error);
+      console.error('Erro ao registrar usuário:', error.response ? error.response.data : error.message);
+      alert('Ocorreu um erro ao registrar o usuário. Por favor, tente novamente.');
     }
   };
 
@@ -89,6 +89,19 @@ export function Register() {
     { value: 'serieB', text: 'Serie B' },
     { value: 'serieC', text: 'Serie C' },
     { value: 'serieD', text: 'Serie D' },
+  ];
+
+  const universityLevelsOptions = [
+    { value: 'ncaa1', text: 'NCAA 1 (EUA)' },
+    { value: 'ncaa2', text: 'NCAA 2 (EUA)' },
+    { value: 'ncaa3', text: 'NCAA 3 (EUA)' },
+    { value: 'naia1', text: 'NAIA 1 (EUA)' },
+    { value: 'naia2', text: 'NAIA 2 (EUA)' },
+    { value: 'nccaa1', text: 'NCCAA 1 (EUA)' },
+    { value: 'nccaa2', text: 'NCCAA 2 (EUA)' },
+    { value: 'njcaa1', text: 'NJCAA 1 (EUA)' },
+    { value: 'njcaa2', text: 'NJCAA 2 (EUA)' },
+    { value: 'njcaa3', text: 'NJCAA 3 (EUA)' },
   ];
 
   const teamCategoryOptions = [
@@ -159,6 +172,7 @@ export function Register() {
         </Nav>
       </FloatingHeader>
       <Styled.RegisterPage>
+
         <Bubble>
           <Subtitle text="Passo a passo" uppercase as="h4" size={theme.sizes.xlarge} />
           <ListContainer>
@@ -184,6 +198,7 @@ export function Register() {
               type="text"
               name="username"
               id="username"
+              title="Nome"
               placeholder="Seu nome de usuário"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -194,6 +209,7 @@ export function Register() {
               type="email"
               name="email"
               id="email"
+              title="E-mail"
               placeholder="Seu e-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -204,6 +220,7 @@ export function Register() {
               type="password"
               name="password"
               id="password"
+              title="Senha"
               placeholder="Sua senha"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -214,6 +231,7 @@ export function Register() {
               type="password"
               name="confirmPassword"
               id="confirmPassword"
+              title="Confirmação de senha"
               placeholder="Confirme sua senha"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -240,52 +258,63 @@ export function Register() {
               required
             />
 
+            {profileType === 'university' && (
             <AuthDropdown
               title="Qual o seu nível competitivo?"
+              id="competitiveLevel"
+              placeholder="Escolha seu nível"
+              options={universityLevelsOptions}
+              otheroption
+              selectedvalue={competitiveLevel}
+              onDropdownChange={(value) => setCompetitiveLevel(value)}
+            />
+            )}
+
+            {profileType === 'player' && (
+              <AuthDropdown
+                title="Qual o seu nível competitivo?"
+                id="competitiveLevel"
+                placeholder="Escolha seu nível"
+                options={levelsOptions}
+                selectedvalue={competitiveLevel}
+                onDropdownChange={(value) => setCompetitiveLevel(value)}
+              />
+            )}
+
+            {profileType === 'club' && (
+            <AuthDropdown
+              title="Qual o nível competitivo do seu clube?"
               id="competitiveLevel"
               placeholder="Escolha seu nível"
               options={levelsOptions}
               selectedvalue={competitiveLevel}
               onDropdownChange={(value) => setCompetitiveLevel(value)}
             />
+            )}
 
-            <AuthDropdown
-              title="Deseja atuar em um time de qual categoria?"
-              id="teamCategory"
-              placeholder="Escolha a categoria do time"
-              options={teamCategoryOptions}
-              selectedvalue={teamCategory}
-              onDropdownChange={(value) => setTeamCategory(value)}
-            />
+            {profileType === 'player' && (
+              <AuthDropdown
+                title="Deseja atuar em um time de qual categoria?"
+                id="teamCategory"
+                placeholder="Escolha a categoria do time"
+                options={teamCategoryOptions}
+                selectedvalue={teamCategory}
+                onDropdownChange={(value) => setTeamCategory(value)}
+              />
+            )}
 
-            <AuthDropdown
-              title="Escolha um plano"
-              id="plan"
-              placeholder="Escolha seu plano"
-              options={plansOptions}
-              selectedvalue={plan}
-              onDropdownChange={(value) => setPlan(value)}
-              required
-            />
+            {profileType === 'player' && (
+              <AuthDropdown
+                title="Escolha o plano desejado"
+                id="plan"
+                placeholder="Escolha o plano"
+                options={plansOptions}
+                selectedvalue={plan}
+                onDropdownChange={(value) => setPlan(value)}
+              />
+            )}
 
-            <AuthButton
-              name="register_submit"
-              id="register_submit"
-              value="Registrar"
-            />
-
-            <AuthRedirect
-              text="Já possui uma conta?"
-              path="/login"
-              pathtext="Login"
-            />
-
-            <StyledLink
-              text="Voltar para a home"
-              path="/"
-              color={theme.colors.secondary}
-              hovercolor={theme.colors.tertiary}
-            />
+            <AuthButton type="submit" title="Cadastrar-se" />
           </AuthForm>
         </AuthContainer>
       </Styled.RegisterPage>
