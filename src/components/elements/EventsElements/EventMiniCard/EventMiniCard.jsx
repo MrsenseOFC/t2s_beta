@@ -1,15 +1,15 @@
 import Prop from 'prop-types';
 import React from 'react';
-import * as Styled from './EventCard-Styles';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { Text } from '../Text/Text';
-import { StyledLink } from '../StyledLink/StyledLink';
+import * as Styled from './EventMiniCard-Styles';
+import { Subtitle } from '../../Subtitle/Subtitle';
+import { Text } from '../../Text/Text';
+import { StyledLink } from '../../StyledLink/StyledLink';
 
-export function EventCard({
+export function EventMiniCard({
   title, subtitle, text, path,
 }) {
   return (
-    <Styled.EventCardContainer>
+    <Styled.EventMiniCardContainer>
       <StyledLink path={path}>
 
         {title && <Subtitle text={title} as="h4" />}
@@ -22,11 +22,11 @@ export function EventCard({
         </Styled.EventInfo>
       </StyledLink>
 
-    </Styled.EventCardContainer>
+    </Styled.EventMiniCardContainer>
   );
 }
 
-EventCard.propTypes = {
+EventMiniCard.propTypes = {
   title: Prop.oneOfType([
     Prop.string,
     Prop.number,

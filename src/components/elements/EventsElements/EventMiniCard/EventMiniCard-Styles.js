@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import { SubtitleElement } from '../Subtitle/Subtitle-Styles';
-import { TextElement } from '../Text/Text-Styles';
-import { LinkContainer } from '../StyledLink/StyledLink-Styles';
+import { SubtitleElement } from '../../Subtitle/Subtitle-Styles';
+import { TextElement } from '../../Text/Text-Styles';
+import { LinkContainer } from '../../StyledLink/StyledLink-Styles';
 
-export const EventCardContainer = styled.div`
+export const EventMiniCardContainer = styled.div`
   ${({ theme }) => css`
 
     height: 100%;

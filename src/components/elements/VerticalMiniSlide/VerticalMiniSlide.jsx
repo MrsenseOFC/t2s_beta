@@ -3,7 +3,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as Styled from './VerticalMiniSlide-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
-import { EventCard } from '../EventCard/EventCard';
+import { EventMiniCard } from '../EventsElements/EventMiniCard/EventMiniCard';
 import { NewsCard } from '../NewsCard/NewsCard';
 import { RankCard } from '../RankCard/RankCard';
 import { ContactCard } from '../ContactCard/ContactCard';
@@ -43,8 +43,8 @@ export function VerticalMiniSlide({ items, title, type }) {
             <>
               {items.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <EventCard
-                    title={item.hour}
+                  <EventMiniCard
+                    title={item.startHour}
                     subtitle={item.title}
                     text={item.subtitle}
                     path={item.path}

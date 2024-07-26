@@ -12,11 +12,7 @@ import { StyledLink } from '../../../../components/elements/StyledLink/StyledLin
 import { ListContainer, ListItem, ListWrapper } from '../../../../components/elements/List/List-Styles';
 import { s2tData } from '../../../../contexts/s2tContext/s2tData';
 import { Banner } from '../../../../components/elements/Banner/Banner';
-import { FloatingMenu } from '../../../../components/FloatingMenu/FloatingMenu';
-import { EventModal } from './Components/EventModal/EventModal';
-import { EventCard } from './Components/EventCard/EventCard';
-import { GridLayout } from '../../../../components/GridLayout/GridLayout';
-import { GridEvents } from './Components/GridEvents/GridEvents';
+import { GridEvents } from '../../../../components/elements/EventsElements/GridEvents/GridEvents';
 
 export function Events({ items }) {
   const [selectedEvent, setSelectedEvent] = useState();

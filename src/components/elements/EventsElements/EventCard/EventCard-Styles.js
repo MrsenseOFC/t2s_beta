@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
-import { fadeIn, slideIn } from '../../../../../../styles/animations';
-import { InfoTitle } from '../../../../../../components/elements/InfoInRow/InfoInRow-Styles';
-import { SubtitleElement } from '../../../../../../components/elements/Subtitle/Subtitle-Styles';
-import { TextElement } from '../../../../../../components/elements/Text/Text-Styles';
-import { CenterColumn } from '../../../../../../components/CenterColumn/CenterColumn';
-import { CenterColumnContainer } from '../../../../../../components/CenterColumn/CenterColumn-Styles';
+import { fadeIn, slideIn } from '../../../../styles/animations';
+import { InfoTitle } from '../../InfoInRow/InfoInRow-Styles';
+import { SubtitleElement } from '../../Subtitle/Subtitle-Styles';
+import { TextElement } from '../../Text/Text-Styles';
+import { CenterColumnContainer } from '../../../CenterColumn/CenterColumn-Styles';
 
 export const EventCardElement = styled.div`
   ${({ theme, backgroundimage }) => css`
@@ -65,6 +64,7 @@ export const EventInfo = styled.div`
 
     ${CenterColumnContainer} {
       width: 100%;
+      text-align: center;
     }
   `}
 `;

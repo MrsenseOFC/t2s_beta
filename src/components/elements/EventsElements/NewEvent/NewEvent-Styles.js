@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { slideIn } from '../../../styles/animations.js';
-import { RowContainer } from '../../RowContainer/Row-Styles.js.js';
-import { AuthLayoutContainer } from '../AuthElements/AuthLayout/AuthLayout-Styles.js';
-import { DropdownButton } from '../AuthElements/AuthDropdown/AuthDropdown-Styles.js';
+import { slideIn } from '../../../../styles/animations.js';
+import { RowContainer } from '../../../RowContainer/Row-Styles.js.js';
+import { AuthLayoutContainer } from '../../AuthElements/AuthLayout/AuthLayout-Styles.js';
+import { DropdownButton } from '../../AuthElements/AuthDropdown/AuthDropdown-Styles.js';
 
 export const NewEventContainer = styled.section`
   ${({ theme }) => css`

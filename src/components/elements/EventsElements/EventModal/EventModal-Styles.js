@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { fadeIn, slideIn } from '../../../../../../styles/animations';
-import { GridTwoColumnContainer } from '../../../../../../components/GridTwoColumn/GridTwoColumn-Styles';
-import { SubtitleElement } from '../../../../../../components/elements/Subtitle/Subtitle-Styles';
-import { ButtonElement } from '../../../../../../components/elements/Button/Button-Styles';
-import { RowContainer } from '../../../../../../components/RowContainer/Row-Styles.js';
-import { AuthCheckboxContainer } from '../../../../../../components/elements/AuthElements/AuthCheckbox/AuthCheckbox-Styles.js';
-import { LinkContainer } from '../../../../../../components/elements/StyledLink/StyledLink-Styles.js';
-import { TextElement } from '../../../../../../components/elements/Text/Text-Styles.js';
+import { fadeIn, slideIn } from '../../../../styles/animations';
+import { GridTwoColumnContainer } from '../../../GridTwoColumn/GridTwoColumn-Styles';
+import { SubtitleElement } from '../../Subtitle/Subtitle-Styles';
+import { ButtonElement } from '../../Button/Button-Styles';
+import { RowContainer } from '../../../RowContainer/Row-Styles.js';
+import { AuthCheckboxContainer } from '../../AuthElements/AuthCheckbox/AuthCheckbox-Styles.js';
+import { LinkContainer } from '../../StyledLink/StyledLink-Styles.js';
+import { TextElement } from '../../Text/Text-Styles.js';
 
 export const EventModalContainer = styled.div`
   ${({ theme }) => css`

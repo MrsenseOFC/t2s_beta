@@ -1,11 +1,12 @@
 import Prop from 'prop-types';
 import React from 'react';
 import * as Styled from './MyEvents-Styles';
+import { GridMyEvents } from '../../../../components/elements/EventsElements/GridMyEvents/GridMyEvents';
 
-export function MyEvents({ children }) {
+export function MyEvents({ events }) {
   return (
     <Styled.MyEventsContainer>
-      {children}
+      <GridMyEvents items={events} />
     </Styled.MyEventsContainer>
   );
 }

@@ -3,21 +3,22 @@ import React, { useContext, useState } from 'react';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 import axios from 'axios';
 import * as Styled from './NewEvent-Styles';
-import { Subtitle } from '../Subtitle/Subtitle';
-import { ColumnContainer } from '../../ColumnContainer/Column-Styles';
-import { AuthWrapper } from '../AuthElements/AuthWrapper/AuthWrapper';
-import { AuthForm } from '../AuthElements/AuthForm/AuthForm';
-import { TextArea } from '../TextArea/TextArea';
-import { AuthInput } from '../AuthElements/AuthInput/AuthInput';
-import { AuthButton } from '../AuthElements/AuthButton/AuthButton';
-import { IconDiv } from '../IconDiv/IconDiv';
-import { Title } from '../Title/Title';
-import { Row } from '../../RowContainer/Row';
-import { AuthLayout } from '../AuthElements/AuthLayout/AuthLayout';
-import { AuthDropdown } from '../AuthElements/AuthDropdown/AuthDropdown';
-import { S2tContext } from '../../../contexts/s2tContext/S2tContext';
-import { addProposal } from '../../../contexts/s2tContext/s2tActions';
-import { AuthFile } from '../AuthElements/AuthFile/AuthFile';
+import { Subtitle } from '../../Subtitle/Subtitle';
+import { ColumnContainer } from '../../../ColumnContainer/Column-Styles';
+import { AuthWrapper } from '../../AuthElements/AuthWrapper/AuthWrapper';
+import { AuthForm } from '../../AuthElements/AuthForm/AuthForm';
+import { TextArea } from '../../TextArea/TextArea';
+import { AuthInput } from '../../AuthElements/AuthInput/AuthInput';
+import { AuthButton } from '../../AuthElements/AuthButton/AuthButton';
+import { IconDiv } from '../../IconDiv/IconDiv';
+import { Title } from '../../Title/Title';
+import { Row } from '../../../RowContainer/Row';
+import { AuthLayout } from '../../AuthElements/AuthLayout/AuthLayout';
+import { AuthDropdown } from '../../AuthElements/AuthDropdown/AuthDropdown';
+import { S2tContext } from '../../../../contexts/s2tContext/S2tContext';
+import { addProposal } from '../../../../contexts/s2tContext/s2tActions';
+import { AuthFile } from '../../AuthElements/AuthFile/AuthFile';
+import { theme } from '../../../../styles/theme';
 
 export function NewEvent({ onclick }) {
   const s2tContext = useContext(S2tContext);
@@ -32,7 +33,11 @@ export function NewEvent({ onclick }) {
     startDate: '',
     endDate: '',
     startHour: '',
-    location: '',
+    format: '',
+    country: '',
+    state: '',
+    zipCode: '',
+    adress: '',
     path: '/',
     src: '/assets/images/others/leagues.png',
     termsAndConditions: '',
@@ -42,12 +47,17 @@ export function NewEvent({ onclick }) {
 
   };
 
+  const eventFormatOptions = [
+    { value: 'online', text: 'Online' },
+    { value: 'inPerson', text: 'Presencial' },
+  ];
+
   return (
     <Styled.NewEventContainer>
       <Row>
         <Title text="Criar evento" uppercase />
 
-        <IconDiv name="Voltar" onclick={onclick}>
+        <IconDiv name="Voltar" onclick={onclick} hovercolor={theme.colors.red}>
           <CloseIcon />
         </IconDiv>
       </Row>
@@ -71,7 +81,7 @@ export function NewEvent({ onclick }) {
               type="text"
               name="eventSubtitle_input"
               id="eventSubtitle_input"
-              placeholder="Insira um breve resumo sobre seu evento (Max. 100 caracteres)"
+              placeholder="Um breve resumo sobre o evento"
               title="Resumo"
               value={eventData.subtitle}
               onChange={(e) => setEventData((prevData) => ({ ...prevData, subtitle: e.target.value }))}
@@ -88,14 +98,78 @@ export function NewEvent({ onclick }) {
               required
             />
 
+            <AuthDropdown
+              id="eventFormat"
+              options={eventFormatOptions}
+              placeholder="Escolha"
+              title="Qual o formato do evento?"
+              onDropdownChange={(value) => setEventData((prevData) => ({ ...prevData, format: value }))}
+            />
+
+            {eventData.format === 'inPerson' && (
+              <>
+                <AuthInput
+                  type="text"
+                  name="eventCountry_input"
+                  id="eventCountry_input"
+                  placeholder="Insira o país que será realizado o evento"
+                  title="País"
+                  value={eventData.country}
+                  onChange={(e) => setEventData((prevData) => ({ ...prevData, country: e.target.value }))}
+                />
+
+                <AuthInput
+                  type="text"
+                  name="eventState_input"
+                  id="eventState_input"
+                  placeholder="Insira o estado que será realizado o evento"
+                  title="Estado"
+                  value={eventData.state}
+                  onChange={(e) => setEventData((prevData) => ({ ...prevData, state: e.target.value }))}
+                />
+
+                <AuthInput
+                  type="text"
+                  name="eventZipCode_input"
+                  id="eventZipCode_input"
+                  placeholder="Insira o CEP"
+                  title="CEP"
+                  value={eventData.zipCode}
+                  onChange={(e) => setEventData((prevData) => ({ ...prevData, zipCode: e.target.value }))}
+                />
+
+                <AuthInput
+                  type="text"
+                  name="eventState_input"
+                  id="eventState_input"
+                  placeholder="Insira o restante do endereço"
+                  title="Endereço"
+                  value={eventData.adress}
+                  onChange={(e) => setEventData((prevData) => ({ ...prevData, adress: e.target.value }))}
+                />
+
+              </>
+            )}
+
+            {eventData.format === 'online' && (
             <AuthInput
               type="text"
-              name="eventLocation_input"
-              id="eventLocation_input"
-              placeholder="Insira o endereço completo do local do evento"
-              title="Endereço"
-              value={eventData.location}
-              onChange={(e) => setEventData((prevData) => ({ ...prevData, location: e.target.value }))}
+              name="eventPlatform_input"
+              id="eventPlatform_input"
+              placeholder="Qual plataforma será realizado o evento"
+              title="Plataforma"
+              value={eventData.adress}
+              onChange={(e) => setEventData((prevData) => ({ ...prevData, adress: e.target.value }))}
+            />
+            )}
+
+            <AuthInput
+              type="time"
+              name="eventStartHour_input"
+              id="eventStartHour_input"
+              title="Horário de início do evento"
+              value={eventData.startHour}
+              onChange={(e) => setEventData((prevData) => ({ ...prevData, startHour: e.target.value }))}
             />
 
             <AuthInput
@@ -116,15 +190,6 @@ export function NewEvent({ onclick }) {
               value={eventData.endDate}
               onChange={(e) => setEventData((prevData) => ({ ...prevData, endDate: e.target.value }))}
               required
-            />
-
-            <AuthInput
-              type="time"
-              name="eventStartHour_input"
-              id="eventStartHour_input"
-              title="Horário de início do evento"
-              value={eventData.startHour}
-              onChange={(e) => setEventData((prevData) => ({ ...prevData, startHour: e.target.value }))}
             />
 
             <AuthFile

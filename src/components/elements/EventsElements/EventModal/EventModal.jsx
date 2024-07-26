@@ -3,23 +3,23 @@ import React, { useState } from 'react';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 import { DocumentPdf as DocumentPdfIcon, DocumentTableArrowRight } from '@styled-icons/fluentui-system-filled';
 import * as Styled from './EventModal-Styles';
-import { FloatingMenu } from '../../../../../../components/FloatingMenu/FloatingMenu';
-import { Row } from '../../../../../../components/RowContainer/Row';
-import { Title } from '../../../../../../components/elements/Title/Title';
-import { IconDiv } from '../../../../../../components/elements/IconDiv/IconDiv';
-import { Subtitle } from '../../../../../../components/elements/Subtitle/Subtitle';
-import { GridTwoColumn } from '../../../../../../components/GridTwoColumn/GridTwoColumn';
-import { InfoInRow } from '../../../../../../components/elements/InfoInRow/InfoInRow';
-import { ColumnContainer } from '../../../../../../components/ColumnContainer/Column-Styles';
-import { Text } from '../../../../../../components/elements/Text/Text';
-import { Button } from '../../../../../../components/elements/Button/Button';
-import { theme } from '../../../../../../styles/theme';
-import { AuthInput } from '../../../../../../components/elements/AuthElements/AuthInput/AuthInput';
-import { AuthOptions } from '../../../../../../components/elements/AuthElements/AuthOptions/AuthOptions';
-import { AuthCheckbox } from '../../../../../../components/elements/AuthElements/AuthCheckbox/AuthCheckbox';
-import { GridOneColumn } from '../../../../../../components/GridOneColumn/GridOneColumn';
-import { AuthForm } from '../../../../../../components/elements/AuthElements/AuthForm/AuthForm';
-import { StyledLink } from '../../../../../../components/elements/StyledLink/StyledLink';
+import { FloatingMenu } from '../../../FloatingMenu/FloatingMenu';
+import { Row } from '../../../RowContainer/Row';
+import { Title } from '../../Title/Title';
+import { IconDiv } from '../../IconDiv/IconDiv';
+import { Subtitle } from '../../Subtitle/Subtitle';
+import { GridTwoColumn } from '../../../GridTwoColumn/GridTwoColumn';
+import { InfoInRow } from '../../InfoInRow/InfoInRow';
+import { ColumnContainer } from '../../../ColumnContainer/Column-Styles';
+import { Text } from '../../Text/Text';
+import { Button } from '../../Button/Button';
+import { theme } from '../../../../styles/theme';
+import { AuthInput } from '../../AuthElements/AuthInput/AuthInput';
+import { AuthOptions } from '../../AuthElements/AuthOptions/AuthOptions';
+import { AuthCheckbox } from '../../AuthElements/AuthCheckbox/AuthCheckbox';
+import { GridOneColumn } from '../../../GridOneColumn/GridOneColumn';
+import { AuthForm } from '../../AuthElements/AuthForm/AuthForm';
+import { StyledLink } from '../../StyledLink/StyledLink';
 
 export function EventModal({ event, onclick }) {
   const [isRegistering, setIsRegistering] = useState();
@@ -28,8 +28,7 @@ export function EventModal({ event, onclick }) {
     <Styled.EventModalContainer>
       <>
         <Row>
-          <Title text={event.title} uppercase />
-
+          {event.title && <Title text={event.title} uppercase />}
           <IconDiv
             onclick={onclick}
             name="Fechar Evento"
@@ -42,16 +41,20 @@ export function EventModal({ event, onclick }) {
         <Subtitle text="Detalhes" uppercase />
 
         <GridOneColumn>
-          <InfoInRow infotitle="Organizador(a)" info={event.organizer} uppercase />
-          <InfoInRow infotitle="Data de início" info={event.startDate} uppercase />
-          <InfoInRow infotitle="Data do fim" info={event.endDate} uppercase />
-          <InfoInRow infotitle="Horário" info={`${event.startHour}h`} uppercase />
-          <InfoInRow infotitle="Local" info={event.location} uppercase />
+          {event.organizer && <InfoInRow infotitle="Organizador(a)" info={event.organizer} uppercase />}
+          {event.startDate && <InfoInRow infotitle="Data de início" info={event.startDate} uppercase />}
+          {event.endDate && <InfoInRow infotitle="Data do fim" info={event.endDate} uppercase />}
+          {event.startHour && <InfoInRow infotitle="Horário" info={`${event.startHour}h`} uppercase />}
+          {event.country && <InfoInRow infotitle="País" info={event.country} uppercase />}
+          {event.state && <InfoInRow infotitle="Estado" info={event.state} uppercase />}
+          {event.zipCode && <InfoInRow infotitle="CEP" info={event.zipCode} uppercase />}
+          {event.adress && <InfoInRow infotitle="Endereço" info={event.adress} uppercase />}
+          {event.platform && <InfoInRow infotitle="Plataforma" info={event.platform} uppercase />}
         </GridOneColumn>
 
         <ColumnContainer>
           <Subtitle text="Descrição" uppercase />
-          <Text text={event.description} />
+          {event.description && <Text text={event.description} />}
         </ColumnContainer>
 
         {isRegistering && (

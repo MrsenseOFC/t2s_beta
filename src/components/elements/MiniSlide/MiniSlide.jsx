@@ -3,7 +3,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as Styled from './MiniSlide-Styles';
 import { Subtitle } from '../Subtitle/Subtitle';
-import { EventCard } from '../EventCard/EventCard';
+import { EventMiniCard } from '../EventsElements/EventMiniCard/EventMiniCard';
 import { NewsCard } from '../NewsCard/NewsCard';
 import { RankCard } from '../RankCard/RankCard';
 import { ContactCard } from '../ContactCard/ContactCard';
