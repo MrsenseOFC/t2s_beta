@@ -62,7 +62,6 @@ export function Home({ islogged }) {
             <>
               <Button
                 path="/register"
-                newtab
                 text="Criar uma conta"
                 bgcolor={theme.colors.lightprimary}
                 bghover={theme.colors.primary}
@@ -74,7 +73,6 @@ export function Home({ islogged }) {
 
               <Button
                 path="/login"
-                newtab
                 text="Entrar"
                 bgcolor={theme.colors.lightprimary}
                 bghover={theme.colors.primary}
@@ -185,7 +183,6 @@ export function Home({ islogged }) {
                 <Button
                   path="/login"
                   text="Login"
-                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -197,7 +194,6 @@ export function Home({ islogged }) {
                 <Button
                   path="/register"
                   text="Registre-se"
-                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -207,17 +203,6 @@ export function Home({ islogged }) {
                 />
               </>
             )}
-
-          {/* <Button
-            path="/benefits"
-            text="Benefícios"
-            bgcolor={theme.colors.mediumblack}
-            bghover={theme.colors.mediumblack}
-            textcolor={theme.colors.white}
-            texthover={theme.colors.primary}
-            border={theme.colors.white}
-            borderhover={theme.colors.primary}
-          /> */}
 
         </Nav>
       </StandardHeader>
@@ -274,7 +259,6 @@ export function Home({ islogged }) {
                 <Button
                   path="/login"
                   text="Login"
-                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -286,7 +270,6 @@ export function Home({ islogged }) {
                 <Button
                   path="/register"
                   text="Registre-se"
-                  newtab
                   bgcolor={theme.colors.mediumblack}
                   bghover={theme.colors.mediumblack}
                   textcolor={theme.colors.white}
@@ -297,23 +280,12 @@ export function Home({ islogged }) {
               </>
             )}
 
-        {/* <Button
-          path="/benefits"
-          text="Benefícios"
-          bgcolor={theme.colors.mediumblack}
-          bghover={theme.colors.mediumblack}
-          textcolor={theme.colors.white}
-          texthover={theme.colors.primary}
-          border={theme.colors.white}
-          borderhover={theme.colors.primary}
-        /> */}
       </MobileNav>
       )}
 
       <BannerSlide backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png" backgroundfixed>
         <VerticalMiniSlide title="Eventos" type="events" items={s2tState.events} />
 
-        {/* disparando 2 warning de thid party cookies no console */}
         <VerticalSoloSlide title="Social" size="400px" items={s2tState.news} />
 
         <VerticalMiniSlide title="Notícias" type="news" items={s2tState.news} />
@@ -370,7 +342,6 @@ export function Home({ islogged }) {
 
       <Slide items={s2tState.photos.usersType} />
 
-      {/* Sendo testado (ainda com problemas) */}
       <BannerSlide title="Vídeos em alta" lazy backgroundimagesrc="/assets/images/backgrounds/slider-bg-2.png" backgroundfixed>
 
         <VerticalVideoSlide size="300px" items={s2tState.news} title="Profissional" />
@@ -383,9 +354,7 @@ export function Home({ islogged }) {
 
       <Slide items={s2tState.photos.benefits} title="Benefícios" />
 
-      {/* <Banner backgroundimagesrc="/assets/images/backgrounds/slider-bg-1.png" backgroundfixed> */}
       <MiniSlide type="partners" title="Parceiros" autoplay items={s2tState.partners} />
-      {/* </Banner> */}
     </Styled.HomePage>
   );
 }
